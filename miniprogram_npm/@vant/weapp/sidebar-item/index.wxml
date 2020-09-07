@@ -1,0 +1,8 @@
+<view bind:tap="onClick" class="{{utils.bem( 'sidebar-item',{selected:selected,disabled:disabled} )}} {{selected?'active-class':''}} {{disabled?'disabled-class':''}} custom-class" hoverClass="van-sidebar-item--hover" hoverStayTime="70">
+    <view class="van-sidebar-item__text">
+        <van-info customStyle="right: 4px" dot="{{dot}}" info="{{info}}" wx:if="{{info!==null||dot}}"></van-info>
+        <view wx:if="{{title}}">{{title}}</view>
+        <slot name="title" wx:else></slot>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

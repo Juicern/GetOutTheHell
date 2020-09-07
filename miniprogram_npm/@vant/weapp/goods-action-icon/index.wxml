@@ -1,0 +1,7 @@
+<van-button square appParameter="{{appParameter}}" bind:click="onClick" bindcontact="bindContact" binderror="bindError" bindgetphonenumber="bindGetPhoneNumber" bindgetuserinfo="bindGetUserInfo" bindlaunchapp="bindLaunchApp" bindopensetting="bindOpenSetting" businessId="{{businessId}}" customClass="van-goods-action-icon" disabled="{{disabled}}" id="{{id}}" lang="{{lang}}" loading="{{loading}}" openType="{{openType}}" sendMessageImg="{{sendMessageImg}}" sendMessagePath="{{sendMessagePath}}" sendMessageTitle="{{sendMessageTitle}}" sessionFrom="{{sessionFrom}}" showMessageCard="{{showMessageCard}}" size="large">
+    <view class="van-goods-action-icon__content">
+        <van-icon class="van-goods-action-icon__icon" customClass="icon-class" dot="{{dot}}" info="{{info}}" name="{{icon}}" size="20px" wx:if="{{icon}}"></van-icon>
+        <slot name="icon"></slot>
+        <text class="text-class">{{text}}</text>
+    </view>
+</van-button>

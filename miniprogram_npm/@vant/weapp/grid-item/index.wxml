@@ -1,0 +1,16 @@
+<view bindtap="onClick" class="custom-class {{utils.bem( 'grid-item',{square:square} )}}" style="{{viewStyle}}">
+    <view class="content-class {{utils.bem( 'grid-item__content',{center:center,square:square,clickable:clickable,surround:border&&gutter} )}} {{border?'van-hairline--surround':''}}" style="{{contentStyle}}">
+        <slot wx:if="{{useSlot}}"></slot>
+        <block wx:else>
+            <view class="van-grid-item__icon icon-class">
+                <van-icon dot="{{dot}}" info="{{info}}" name="{{icon}}" wx:if="{{icon}}"></van-icon>
+                <slot name="icon" wx:else></slot>
+            </view>
+            <view class="van-grid-item__text text-class">
+                <text wx:if="{{text}}">{{text}}</text>
+                <slot name="text" wx:else></slot>
+            </view>
+        </block>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

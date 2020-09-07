@@ -1,0 +1,7 @@
+<view bind:touchmove="onTouchMove" class="van-rate custom-class">
+    <view class="van-rate__item" style="padding-right: {{index!==count-1?utils.addUnit(gutter):''}}" wx:for="{{innerCountArray}}" wx:key="index">
+        <van-icon bind:click="onSelect" class="van-rate__icon" color="{{disabled?disabledColor:index+1<=innerValue?color:voidColor}}" customClass="icon-class" data-score="{{index}}" name="{{index+1<=innerValue?icon:voidIcon}}" style="font-size: {{utils.addUnit(size)}}"></van-icon>
+        <van-icon bind:click="onSelect" class="{{utils.bem( 'rate__icon',['half'] )}}" color="{{disabled?disabledColor:index+0.5<=innerValue?color:voidColor}}" customClass="icon-class" data-score="{{index-0.5}}" name="{{index+0.5<=innerValue?icon:voidIcon}}" style="font-size: {{utils.addUnit(size)}}" wx:if="{{allowHalf}}"></van-icon>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

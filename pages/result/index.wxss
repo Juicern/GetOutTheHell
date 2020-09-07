@@ -1,0 +1,120 @@
+page {
+    background-image: linear-gradient(#6f86d6,#48c6ef);
+    color: #444;
+    height: 100vh;
+}
+
+.back:active {
+    opacity: .8;
+}
+
+.user-info {
+    position: absolute;
+    width: 100%;
+    padding: 36rpx;
+    color: #fff;
+}
+
+.user-info>.avatar {
+    position: absolute;
+    top: 36rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+}
+
+.user-info>.user-name {
+    position: absolute;
+    top: 41rpx;
+    left: 175rpx;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.user-info>.user-text {
+    position: absolute;
+    top: 106rpx;
+    left: 175rpx;
+    font-size: .8rem;
+    width: 520rpx;
+    color: hsla(0,0%,100%,.8);
+}
+
+.view-body {
+    position: absolute;
+    width: 700rpx;
+    height: calc(100vh - 280rpx);
+    top: 190rpx;
+    right: 25rpx;
+    background-color: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 32rpx hsla(0,0%,39.2%,.4);
+}
+
+.copyright {
+    color: #fff;
+    font-size: .6rem;
+    bottom: 30rpx;
+    opacity: .6;
+}
+
+.copyright,.view-body>.loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.view-body>.loading {
+    color: #aaa;
+}
+
+.context,.view-body>.loading {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.context {
+    position: absolute;
+    width: 100%;
+}
+
+.icon {
+    width: 100%;
+    text-align: center;
+    height: 220px;
+}
+
+.success {
+    color: #3dd600;
+}
+
+.error {
+    color: #ff3838;
+}
+
+.gate-name {
+    position: relative;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    top: -40rpx;
+    color: #888;
+}
+
+.text {
+    top: -50rpx;
+    font-size: 1.5rem;
+}
+
+.text,.time {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+
+.time {
+    font-size: 1.2rem;
+    top: -30rpx;
+    color: #61a8f8;
+}

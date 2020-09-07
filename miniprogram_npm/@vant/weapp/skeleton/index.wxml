@@ -1,0 +1,11 @@
+<view class="custom-class {{utils.bem( 'skeleton',[ {animate:animate} ] )}}" wx:if="{{loading}}">
+    <view class="avatar-class {{utils.bem( 'skeleton__avatar',[avatarShape] )}}" style="{{'width:'+avatarSize+';height:'+avatarSize}}" wx:if="{{avatar}}"></view>
+    <view class="{{utils.bem('skeleton__content')}}">
+        <view class="title-class {{utils.bem('skeleton__title')}}" style="{{'width:'+titleWidth}}" wx:if="{{title}}"></view>
+        <view class="row-class {{utils.bem('skeleton__row')}}" style="{{'width:'+(isArray?rowWidth[index]:rowWidth)}}" wx:for="{{rowArray}}" wx:key="index"></view>
+    </view>
+</view>
+<view class="{{utils.bem('skeleton__content')}}" wx:else>
+    <slot></slot>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

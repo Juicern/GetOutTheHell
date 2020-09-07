@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+<input style="margin-bottom:10px" placeholder="姓名" bindblur="name" />
+<input style="margin-bottom:10px" placeholder="学院" bindblur="school" />
+<input style="margin-bottom:10px" placeholder="地点" bindblur="location" />
+<input style="margin-bottom:10px" placeholder="年" bindblur="year" />
+<input style="margin-bottom:10px" placeholder="月" bindblur="month" />
+<input style="margin-bottom:10px" placeholder="日" bindblur="date" />
+<input style="margin-bottom:10px" placeholder="时" bindblur="hour" />
+<input style="margin-bottom:10px" placeholder="分" bindblur="min" />
+
+  <view class="usermotto" bindtap="goresult">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

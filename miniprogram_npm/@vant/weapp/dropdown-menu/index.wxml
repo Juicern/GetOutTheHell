@@ -1,0 +1,12 @@
+<view class="van-dropdown-menu van-dropdown-menu--top-bottom">
+    <view bind:tap="onTitleTap" class="{{utils.bem( 'dropdown-menu__item',{disabled:item.disabled} )}}" data-index="{{index}}" wx:for="{{itemListData}}" wx:key="index">
+        <view class="{{item.titleClass}} {{utils.bem( 'dropdown-menu__title',{active:item.showPopup,down:item.showPopup===direction==='down'} )}}" style="{{item.showPopup?'color:'+activeColor:''}}">
+            <view class="van-ellipsis">
+        {{computed.displayTitle(item)}}
+      </view>
+        </view>
+    </view>
+    <slot></slot>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />

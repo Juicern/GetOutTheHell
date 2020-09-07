@@ -1,0 +1,30 @@
+<view class="custom-class {{utils.bem( 'steps',[direction] )}}">
+    <view class="van-step__wrapper">
+        <view bindtap="onClick" class="{{utils.bem( 'step',[ direction,status(index,active) ] )}} van-hairline" data-index="{{index}}" style="{{status(index,active)==='inactive'?'color: '+inactiveColor:''}}" wx:for="{{steps}}" wx:key="index">
+            <view class="van-step__title" style="{{index===active?'color: '+activeColor:''}}">
+                <view>{{item.text}}</view>
+                <view class="desc-class">{{item.desc}}</view>
+            </view>
+            <view class="van-step__circle-container">
+                <block wx:if="{{index!==active}}">
+                    <van-icon color="{{status(index,active)==='inactive'?inactiveColor:activeColor}}" customClass="van-step__icon" name="{{inactiveIcon}}" wx:if="{{inactiveIcon}}"></van-icon>
+                    <view class="van-step__circle" style="{{'background-color: '+(index<active?activeColor:inactiveColor)}}" wx:else></view>
+                </block>
+                <van-icon color="{{activeColor}}" customClass="van-step__icon" name="{{activeIcon}}" wx:else></van-icon>
+            </view>
+            <view class="van-step__line" style="{{'background-color: '+(index<active?activeColor:inactiveColor)}}" wx:if="{{index!==steps.length-1}}"></view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="status">
+function get(index, active) {
+    if (index < active) {
+        return ('finish')
+    } else if (index === active) {
+        return ('process')
+    };
+    return ('inactive')
+};
+module.exports = get;
+</wxs>

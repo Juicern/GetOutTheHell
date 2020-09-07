@@ -1,0 +1,27 @@
+<view class="van-uploader">
+    <view class="van-uploader__wrapper">
+        <view class="van-uploader__preview" wx:if="{{previewImage}}" wx:for="{{lists}}" wx:key="index">
+            <image alt="{{item.name||'图片'+index}}" bind:tap="onPreviewImage" class="van-uploader__preview-image" data-index="{{index}}" mode="{{imageFit}}" src="{{item.url||item.path}}" style="width: {{utils.addUnit(previewSize)}}; height: {{utils.addUnit(previewSize)}};" wx:if="{{item.isImage}}"></image>
+            <view class="van-uploader__file" style="width: {{utils.addUnit(previewSize)}}; height: {{utils.addUnit(previewSize)}};" wx:else>
+                <van-icon class="van-uploader__file-icon" name="description"></van-icon>
+                <view class="van-uploader__file-name van-ellipsis">{{item.name||item.url||item.path}}</view>
+            </view>
+            <view class="van-uploader__mask" wx:if="{{item.status==='uploading'||item.status==='failed'}}">
+                <van-icon class="van-uploader__mask-icon" name="warning-o" wx:if="{{item.status==='failed'}}"></van-icon>
+                <van-loading class="van-uploader__loading" wx:else></van-loading>
+                <text class="van-uploader__upload-text" wx:if="{{item.message}}">{{item.message}}</text>
+            </view>
+            <van-icon bind:tap="deleteItem" class="van-uploader__preview-delete" data-index="{{index}}" name="clear" wx:if="{{deletable}}"></van-icon>
+        </view>
+        <block wx:if="{{isInCount}}">
+            <view bind:tap="startUpload" class="van-uploader__slot">
+                <slot></slot>
+            </view>
+            <view bind:tap="startUpload" class="van-uploader__upload {{disabled?'van-uploader__upload--disabled':''}}" style="width: {{utils.addUnit(previewSize)}}; height: {{utils.addUnit(previewSize)}};" wx:if="{{showUpload}}">
+                <van-icon class="van-uploader__upload-icon" name="{{uploadIcon}}"></van-icon>
+                <text class="van-uploader__upload-text" wx:if="{{uploadText}}">{{uploadText}}</text>
+            </view>
+        </block>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

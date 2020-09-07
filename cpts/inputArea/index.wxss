@@ -1,0 +1,12 @@
+.text-area {
+    width: 100%;
+    min-height: 100rpx;
+}
+
+.text {
+    padding: 28rpx 35rpx;
+}
+
+.placeholder {
+    color: #afafaf;
+}

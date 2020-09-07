@@ -1,0 +1,12 @@
+<view class="{{utils.bem('dropdown-item',direction)}}" style="{{wrapperStyle}}" wx:if="{{showWrapper}}">
+    <van-popup bind:after-enter="onOpened" bind:after-leave="onClosed" bind:close="toggle" bind:enter="onOpen" bind:leave="onClose" closeOnClickOverlay="{{closeOnClickOverlay}}" customStyle="position: absolute;{{popupStyle}}" duration="{{transition?duration:0}}" overlay="{{overlay}}" overlayStyle="position: absolute;" position="{{direction==='down'?'top':'bottom'}}" show="{{showPopup}}">
+        <van-cell clickable bind:tap="onOptionTap" class="{{utils.bem( 'dropdown-item__option',{active:item.value===value} )}}" data-option="{{item}}" icon="{{item.icon}}" wx:for="{{options}}" wx:key="value">
+            <view class="van-dropdown-item__title" slot="title" style="{{item.value===value?'color:'+activeColor:''}}">
+        {{item.text}}
+      </view>
+            <van-icon class="van-dropdown-item__icon" color="{{activeColor}}" name="success" wx:if="{{item.value===value}}"></van-icon>
+        </van-cell>
+        <slot></slot>
+    </van-popup>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

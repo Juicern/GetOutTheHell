@@ -1,0 +1,4 @@
+./miniprogram_npm/@vant/weapp/common/index.wxss.van-sidebar {
+    width: 85px;
+    width: var(--sidebar-width,85px);
+}

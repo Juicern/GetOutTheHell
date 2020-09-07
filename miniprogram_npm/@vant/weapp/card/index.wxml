@@ -1,0 +1,35 @@
+<view class="custom-class van-card">
+    <view class="{{utils.bem( 'card__header',{center:centered} )}}">
+        <view bind:tap="onClickThumb" class="van-card__thumb">
+            <image class="van-card__img thumb-class" lazyLoad="{{lazyLoad}}" mode="{{thumbMode}}" src="{{thumb}}" wx:if="{{thumb}}"></image>
+            <slot name="thumb"></slot>
+            <van-tag mark customClass="van-card__tag" type="danger" wx:if="{{tag}}">
+        {{tag}}
+      </van-tag>
+        </view>
+        <view class="van-card__content {{utils.bem( 'card__content',{center:centered} )}}">
+            <view>
+                <view class="van-card__title title-class" wx:if="{{title}}">{{title}}</view>
+                <slot name="title" wx:else></slot>
+                <view class="van-card__desc desc-class" wx:if="{{desc}}">{{desc}}</view>
+                <slot name="desc" wx:else></slot>
+                <slot name="tags"></slot>
+            </view>
+            <view class="van-card__bottom">
+                <slot name="price-top"></slot>
+                <view class="van-card__price price-class" wx:if="{{price||price===0}}">{{currency}}<text class="van-card__price-integer">{{integerStr}}</text>
+                    <text class="van-card__price-decimal">{{decimalStr}}</text>
+                </view>
+                <slot name="price" wx:else></slot>
+                <view class="van-card__origin-price origin-price-class" wx:if="{{originPrice||originPrice===0}}">{{currency}} {{originPrice}}</view>
+                <view class="van-card__num num-class" wx:if="{{num}}">x {{num}}</view>
+                <slot name="num" wx:else></slot>
+                <slot name="bottom"></slot>
+            </view>
+        </view>
+    </view>
+    <view class="van-card__footer">
+        <slot name="footer"></slot>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

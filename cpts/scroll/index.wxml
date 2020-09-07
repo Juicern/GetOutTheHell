@@ -1,0 +1,20 @@
+<scroll-view bindscroll="onScroll" bindscrolltolower="isEnd" bindtouchend="touchEnd" bindtouchstart="touchStart" class="tloader state-{{loaderState}}" enableBackToTop="true" lowerThreshold="100" scrollY="true" style="height:{{height}}">
+    <view class="tloader-symbol" style="height: {{pullDownHeight>50?50:pullDownHeight}}px" wx:if="{{loaderState!='reset'}}">
+        <view class="tloader-msg">
+            <text></text>
+        </view>
+        <view class="tloader-loading">
+            <text class="ui-loading"></text>
+        </view>
+    </view>
+    <view bindtouchmove="touchMove" class="tloader-body" style="transform: translateY({{pullDownHeight+'px'}})">
+        <slot></slot>
+        <view class="empty-box" wx:if="{{isEmpty}}">
+            <van-loading vertical color="#666" loadingTextColor="#fff" wx:if="{{loading}}">数据加载中...</van-loading>
+            <view wx:else>
+                <image class="empty-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAABVCAYAAAChDXHvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU0MzcwNEQ0NkE1NTExRUFBRUY1QTc3MzgyMjYwRUY0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU0MzcwNEQ1NkE1NTExRUFBRUY1QTc3MzgyMjYwRUY0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTQzNzA0RDI2QTU1MTFFQUFFRjVBNzczODIyNjBFRjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTQzNzA0RDM2QTU1MTFFQUFFRjVBNzczODIyNjBFRjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4KDap0AAAFMElEQVR42uxd22scVRz+7e50b0k2m4ZQo9Yi9VIr2oogPqhPIhUUQQRBxcdWBFP6on9AH/ogIvrg9UEsWvXFJ4WCD4JFBUFoFRWsCvXSPsSaZrOXbC4bv9/mRNZkNzs7O7tzZub74ONskrM5l2/O7/ebOefMSaytrQlhPxIUikIRFIpCDQzV6mKkOi6fzw61vGRA7UyDM+DX4AK4ZikXTB1nTJ1jNaKuAT8BD4ZsEJ0FHwL/isOISodUJDF1/hTMBFH4sIU6ElKRNnAAPBwHoZ6IQBwRSBuG7aPqQTtlH6BtyMbBR4Udgfgox5rLdGlZrixUpdFoBFqPZDIpxbG8ZNI7rLo6krZUxAaRFFoHrYttsEYoG0SysS7WCUVQKApFUCiCQlEogkIRFIpCERQqhujroeyvFy71lH96aiISnXZpdq6n/Hv3THNE0fQRFKptRZL2XDM21cU6oXSyzoYOSpmJw0gFE35CZ1R3TY7TxtFHUSiCQhEUikIRVgn18ekv2HtRC8/P/XR+F5Kz01N3bZuvVKlJpVqToDZBJhIiI/mcFEZy3dqjW28OHrjlxtnImD40Sss4CV7VLW+QIim07Iq7nZFXg++ibYko+agXwAfcZNSrOZEITqhEsw6uF/8/CD4fCdOHK+4eJMfd5leT083sWIbjaOMZmMCvQjui0IBJJKfAVIR9vO4kOIW2ToRSKGO73wF3xyAg26NtHbS/GtSIOgY+HKPo+RHwuVD5KFxZGoOf8PLdsITnHfAi2v4l/NW31o8oVLSI5EPxuLMwROF5O2ibP0IfFMJg+t4Gr/f65ZCF5+2wF3zLatOHK+lZJI/18z9CGJ63w+Poi89hAt+0bkShYncgeUmIDbyMPrndKqFQoTEkH4BZ6vMfcsZfjdg0ol4Hb6Y2W7APfM03/+n1hSA6zQE73AyW/G5hUCtqe10B67aPA10p++ih+wYXJgcSmtv9gkkrZ3hXlleGX+bKKoXqFbX6UizKDL1Q1cW6LA/xCteytEwK1bO/EJmbLw9FLC1Dy7L9HciOrRVbbTTk8lxJ8rmM5LIZcVJJSfj0fEkDh5XVhtQwiqq1uoThPdWOzZXTDqygI5VxB9f1USiCQlEogkIRFIpCERSKoFCRRPPJRNTOdrINXvp380kFfoyoJUrREWWbTN9v1KMjLvj1j5prJlwOTX10rYsk9Gie28BbwRtK5er+Sq3uUJOtGMllVguj+R/w8RdQ0+/Bc+B56bLiYLPp204oHW13gveDukDibrC4OZNOYc/OlahKG0xNFMRx2u46mpf1I/nOgJ+Bul690atQuu1Rz/R7StaPueuK+XK1Oa9DtHR0LiPjo67fqaR7gt8DXwUvuhHqafANWV9A6Bo6hnWWVE+sIUTSOxzZWRwTD9OcNfAZ8GQ3oXRIetqNoGKVOLIkn81IYTTXz2y0+pHxbuH5jFG196hE/zuGutplOFFxUqlYCKOCqB/SNmvbx8fy/YhUMxq4ivrULx0FnzT+ihg81C+9D74iHY6PdRP1HQLvBXUnIV+o5w/UxXxjor7TXqO+7W6OW++j9oM36b2UcCdHJyyae6ifwR/NfdR35ueGX/dRvTzdUBN5nTGbyt0mvdakU3r/FzERKuDf4J+GarL+MKnyd2PSPB3vNgih3EJP29xpONnyWanbN9Im4sybvEWTqsCjsv5OB2n5+/8eAsjWfcNLpjNboSHpxgGGei9RNnn091da/l4y39ffXQb/MWz9PNDwNkihiH6FIkJwG0ChwoF/BRgAaEP1gWBQLKwAAAAASUVORK5CYII="></image>
+        {{emptyText}}
+      </view>
+        </view>
+    </view>
+</scroll-view>

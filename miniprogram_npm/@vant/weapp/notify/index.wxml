@@ -1,0 +1,6 @@
+<van-transition bind:tap="onTap" customClass="van-notify__container" customStyle="z-index: {{zIndex}};" name="slide-down" show="{{show}}">
+    <view class="van-notify van-notify--{{type}}" style="background:{{background}};color:{{color}};">
+        <view style="height: {{statusBarHeight}}px" wx:if="{{safeAreaInsetTop}}"></view>
+        <text>{{message}}</text>
+    </view>
+</van-transition>

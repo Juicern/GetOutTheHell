@@ -1,0 +1,4 @@
+<view class="van-count-down">
+    <slot wx:if="{{useSlot}}"></slot>
+    <block wx:else>{{formattedTime}}</block>
+</view>

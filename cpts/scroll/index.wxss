@@ -1,0 +1,219 @@
+.tloader-msg:after {
+    content: "下拉刷新";
+}
+
+.state-pulling.enough .tloader-msg:after {
+    content: "松开刷新";
+}
+
+.state-refreshed .tloader-msg:after {
+    content: "刷新成功";
+}
+
+.tloader-loading:after {
+    content: "正在加载...";
+}
+
+.tloader-symbol .tloader-loading:after {
+    content: "正在刷新...";
+}
+
+.tloader-btn:after {
+    content: "点击加载更多";
+}
+
+.tloader {
+    position: relative;
+    overflow-y: scroll;
+}
+
+.tloader.state-pulling {
+    overflow-y: hidden;
+}
+
+.tloader-symbol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #888;
+    text-align: center;
+    height: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.state- .tloader-symbol,.state-reset .tloader-symbol {
+    height: 0;
+}
+
+.state-reset .tloader-symbol {
+    transition: height 0s .2s;
+}
+
+.state-loading .tloader-symbol {
+    display: none;
+}
+
+.tloader-msg {
+    line-height: 50px;
+    font-size: 12px;
+}
+
+.state-pulling .tloader-msg text {
+    display: inline-block;
+    font-size: 2em;
+    margin-right: .6em;
+    vertical-align: middle;
+    height: 1em;
+    border-left: 1px solid;
+    position: relative;
+    transition: transform .3s ease;
+    transition: transform .3s ease,-webkit-transform .3s ease;
+}
+
+.state-pulling .tloader-msg text:after,.state-pulling .tloader-msg text:before,.state-reset .tloader-msg text:after,.state-reset .tloader-msg text:before {
+    content: "";
+    position: absolute;
+    font-size: .5em;
+    width: 1em;
+    bottom: 0;
+    border-top: 1px solid;
+}
+
+.state-pulling .tloader-msg text:before,.state-reset .tloader-msg text:before {
+    right: 1px;
+    transform: rotate(50deg);
+    transform-origin: right;
+}
+
+.state-pulling .tloader-msg text:after,.state-reset .tloader-msg text:after {
+    left: 0;
+    transform: rotate(-50deg);
+    transform-origin: left;
+}
+
+.state-pulling.enough .tloader-msg text {
+    transform: rotate(180deg);
+}
+
+.state-refreshing .tloader-msg {
+    height: 0;
+    opacity: 0;
+}
+
+.state-refreshed .tloader-msg {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.state-refreshed .tloader-msg text {
+    display: inline-block;
+    box-sizing: content-box;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 20px;
+    height: 1em;
+    width: 1em;
+    border: 1px solid;
+    border-radius: 100%;
+    position: relative;
+}
+
+.state-refreshed .tloader-msg text:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    height: 12px;
+    width: 5px;
+    border: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(40deg);
+}
+
+.tloader-body {
+    height: 100%;
+}
+
+.state-refreshing .tloader-body {
+    transform: translateY(60px);
+}
+
+.state-refreshing .tloader-body,.state-reset .tloader-body {
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+}
+
+.state-refreshing .tloader-footer {
+    display: none;
+}
+
+.tloader-footer .tloader-btn {
+    color: #484869;
+    font-size: .9em;
+    text-align: center;
+    line-height: 50px;
+}
+
+.state-loading .tloader-footer .tloader-btn {
+    display: none;
+}
+
+.tloader-loading {
+    display: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+    color: #888;
+}
+
+.tloader-loading .ui-loading {
+    font-size: 20px;
+    margin-right: .6rem;
+}
+
+.state-loading .tloader-footer .tloader-loading,.state-refreshing .tloader-symbol .tloader-loading {
+    display: block;
+}
+
+@-webkit-keyframes circle {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes circle {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.ui-loading {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #9494b6;
+    border-top-color: #fff;
+    border-radius: 100%;
+    animation: circle .8s linear infinite;
+}
+
+.empty-box {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #aaa;
+}
+
+.empty-icon {
+    position: relative;
+    width: 212rpx;
+    height: 150rpx;
+    display: block;
+    margin: auto;
+}
