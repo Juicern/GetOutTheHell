@@ -8,7 +8,7 @@ Page({
         name:'',
         school:'',
         location:'',
-        year:'2020',
+        year:'',
         month:'',
         date:'',
         hour:'',

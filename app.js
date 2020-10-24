@@ -1,5 +1,18 @@
 var n = require("./utils/index.js");
-
+var timestamp = Date.parse(new Date());
+var date = new Date(timestamp);
+//年  
+var Y = date.getFullYear();  
+//月  
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);  
+//日  
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();  
+//时  
+var H = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();  
+//分  
+var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();  
+//秒  
+var s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
 App({
     globalData: {
         openId: null,
@@ -15,11 +28,11 @@ App({
         name:'',
         school:'',
         location:'',
-        year:'2020',
-        month:'',
-        date:'',
-        hour:'',
-        min:''
+        year:Y,
+        month:M,
+        date:D,
+        hour:H,
+        min:m
     },
     onShow: function(n) {
         this.getOpenId(), wx.setKeepScreenOn({

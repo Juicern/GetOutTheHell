@@ -7,16 +7,54 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-
-<input style="margin-bottom:10px" placeholder="姓名" bindblur="name" />
-<input style="margin-bottom:10px" placeholder="学院" bindblur="school" />
-<input style="margin-bottom:10px" placeholder="地点" bindblur="location" />
-<input style="margin-bottom:10px" placeholder="年" bindblur="year" />
-<input style="margin-bottom:10px" placeholder="月" bindblur="month" />
-<input style="margin-bottom:10px" placeholder="日" bindblur="date" />
-<input style="margin-bottom:10px" placeholder="时" bindblur="hour" />
-<input style="margin-bottom:10px" placeholder="分" bindblur="min" />
-
+<p>
+  <div style="float:left">
+    <text decode="true">姓名:&emsp;</text>  
+  </div>
+  <input style="margin-bottom:10px" placeholder="XXX" bindblur="name"/>
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">学院:&emsp;</text>  
+  </div>
+  <input style="margin-bottom:10px" value="XXX学院" bindblur="school"/>
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">地点:&emsp;</text>  
+  </div>
+  <input style="margin-bottom:10px" value="江宁校区X门" bindblur="location" />
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">&emsp;年:&emsp;</text>
+  </div>
+  <input style="margin-bottom:10px" name="year" value="{{year}}" bindblur="year" />
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">&emsp;月:&emsp;</text>
+  </div>
+  <input style="margin-bottom:10px" name="month" value="{{month}}" bindblur="month"  />
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">&emsp;日:&emsp;</text>
+  </div>
+  <input style="margin-bottom:10px" name="date" value="{{date}}" bindblur="date" />
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">&emsp;时:&emsp;</text>
+  </div>
+  <input style="margin-bottom:10px" name="hour" value="{{hour}}" bindblur="hour" />
+</p>
+<p>
+  <div style="float:left">
+    <text decode="true">&emsp;分:&emsp;</text>
+  </div>
+  <input style="margin-bottom:10px" name="min" value="{{min}}" bindblur="min" />
+</p>
   <view class="usermotto" bindtap="goresult">
     <text class="user-motto">{{motto}}</text>
   </view>
