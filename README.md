@@ -3,7 +3,7 @@
 
 > 使用前需在project.config.json中修改appid的值，应为自己创建的小程序的appid
 
-![image-20201024220928305](C:\Users\RickyChu\OneDrive - HHU\hhu-getOutTheHell\image-appid.png)
+![appid修改界面](https://github.com/Ricky-Chu/GetOutTheHell/master/image-appid.png)
 
 软件打开界面如下：
 
