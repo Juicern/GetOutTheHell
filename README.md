@@ -7,6 +7,8 @@
 
 因对学校此举极为不满，且学校申请出校的小程序充满bug，故在9月初，开发了这个为对付南京某211的一刀切封闭管理，而做出来的门禁码生成小程序。
 
+>下载[微信小程序开发软件](https://mp.weixin.qq.com/cgi-bin/wx)，注册一个小程序，然后将此项目代码导入即可使用 
+
 > 使用前需在project.config.json中修改appid的值，应为自己创建的小程序的appid
 
 ![](https://github.com/Ricky-Chu/GetOutTheHell/blob/master/image-appid.png)
