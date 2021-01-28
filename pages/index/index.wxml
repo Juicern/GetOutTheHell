@@ -11,19 +11,31 @@
   <div style="float:left">
     <text decode="true">姓名:&emsp;</text>  
   </div>
+<<<<<<< Updated upstream
   <input style="margin-bottom:10px" name="name" value="{{name}}" bindblur="name"/>
+=======
+  <input style="margin-bottom:10px" placeholder="XXX" bindblur="name"/>
+>>>>>>> Stashed changes
 </p>
 <p>
   <div style="float:left">
     <text decode="true">学院:&emsp;</text>  
   </div>
+<<<<<<< Updated upstream
   <input style="margin-bottom:10px" name="school" value="{{school}}" bindblur="school"/>
+=======
+  <input style="margin-bottom:10px" value="XXX学院" bindblur="school"/>
+>>>>>>> Stashed changes
 </p>
 <p>
   <div style="float:left">
     <text decode="true">地点:&emsp;</text>  
   </div>
+<<<<<<< Updated upstream
   <input style="margin-bottom:10px" name="location" value="{{location}}" bindblur="location" />
+=======
+  <input style="margin-bottom:10px" value="江宁校区X门" bindblur="location" />
+>>>>>>> Stashed changes
 </p>
 <p>
   <div style="float:left">

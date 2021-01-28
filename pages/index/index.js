@@ -21,9 +21,15 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+<<<<<<< Updated upstream
     name:wx.getStorageSync('name'),
     school:wx.getStorageSync('school'),
     location:wx.getStorageSync('location'),
+=======
+    name:'',
+    school:'',
+    location:'',
+>>>>>>> Stashed changes
     year:Y,
     month:M,
     date:D,
