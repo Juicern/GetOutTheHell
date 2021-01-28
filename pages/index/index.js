@@ -21,9 +21,9 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    name:'',
-    school:'',
-    location:'',
+    name:wx.getStorageSync('name'),
+    school:wx.getStorageSync('school'),
+    location:wx.getStorageSync('location'),
     year:Y,
     month:M,
     date:D,
@@ -104,6 +104,9 @@ Page({
 
 
   goresult:function(){
+    wx.setStorageSync('name', this.data.name)
+    wx.setStorageSync('school', this.data.school);
+    wx.setStorageSync('location', this.data.location);
     wx.navigateTo({
       url: '../result/index',
     })
