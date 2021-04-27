@@ -1,26 +1,26 @@
 # GetOutTheHell
-事件起因：2020年新冠肺炎大爆发，导致各大高校封闭管理，出校需申请后获得门禁码才可出校。
+事件起因：2020年新冠肺炎大爆發，導致各大高校封閉管理，出校需申請後獲得門禁碼才可出校。
 
-然而当秋季学期开学时，中国大陆地区的疫情已被控制，理论上无需封闭管理，但学校因为一些都懂的原因，依然采取封闭式管理。
+然而當秋季學期開學時，中國大陸地區的疫情已被控制，理論上無需封閉管理，但學校因為一些都懂的原因，依然採取封閉式管理。
 
-因对学校此举极为不满，且学校申请出校的小程序充满bug，故在9月初，开发了这个为对付一刀切封闭管理，而做出来的门禁码生成小程序。
+因對學校此舉極為不滿，且學校申請出校的小程式充滿bug，故在9月初，開發了這個為對付一刀切封閉管理，而做出來的門禁碼生成小程式。
 
->下载[微信小程序开发软件](https://mp.weixin.qq.com/cgi-bin/wx)，注册一个小程序，然后将此项目代码导入即可使用 
+>下載[微信小程式開發軟體](https://mp.weixin.qq.com/cgi-bin/wx)，註冊一個小程式，然後將此專案程式碼匯入即可使用 
 
-> 使用前需在project.config.json中修改appid的值，应为自己创建的小程序的appid
+> 使用前需在project.config.json中修改appid的值，應為自己建立的小程式的appid
 
 ![](https://github.com/Ricky-Chu/GetOutTheHell/blob/master/image-appid.png)
 
-软件打开界面如下： 
+軟體開啟介面如下： 
 
 <img width="270" height="480" src="https://github.com/Ricky-Chu/GetOutTheHell/blob/master/image-index.png"/>
 
-点击“获取头像”后即可得到当前用户头像。
+點選“獲取頭像”後即可得到當前使用者頭像。
 
 <img width="270" height="480" src="https://github.com/Ricky-Chu/GetOutTheHell/blob/master/image-face.png"/>
 
-将其余信息填写完成后，点击“开始制作”，便可生成门禁码。
+將其餘資訊填寫完成後，點選“開始製作”，便可生成門禁碼。
 
 <img width="270" height="480" src="https://github.com/Ricky-Chu/GetOutTheHell/blob/master/image-result.png"/>
 
-> 注：因采用了某种技术，生成的界面与学校官方的没有任何差别，有需要的朋友可以放心使用
+> 注：因採用了某種技術，生成的介面與學校官方的沒有任何差別，有需要的朋友可以放心使用
