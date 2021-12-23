@@ -24,13 +24,12 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "useIsolateContext": true,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
@@ -40,8 +39,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.2",
-  "appid": "wxb2ff5927bdb1fd6e",
   "projectname": "GetOutTheHell",
+  "appid": "wx5f63cf910fca7130",
   "debugOptions": {
     "hidedInDevtools": []
   },

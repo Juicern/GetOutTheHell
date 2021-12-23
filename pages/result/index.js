@@ -21,7 +21,6 @@ Page({
             name:a.globalData.name,
             school:a.globalData.school,
             location:a.globalData.location,
-            year:a.globalData.year,
             month:a.globalData.month,
             date:a.globalData.date,
             hour:a.globalData.hour,

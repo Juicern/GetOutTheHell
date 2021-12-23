@@ -82,6 +82,7 @@ page {
     width: 100%;
     text-align: center;
     height: 220px;
+    top: -10px;
 }
 
 .success {
@@ -97,12 +98,12 @@ page {
     width: 100%;
     font-size: 1rem;
     text-align: center;
-    top: -40rpx;
+    top: 15px;
     color: #888;
 }
 
 .text {
-    top: -50rpx;
+    top: -30px;
     font-size: 1.5rem;
 }
 
@@ -110,11 +111,12 @@ page {
     position: relative;
     width: 100%;
     text-align: center;
-    font-weight: 700;
+    font-weight: 900;
+    top: 8px;
 }
 
 .time {
-    font-size: 1.2rem;
-    top: -30rpx;
+    font-size: 1.6rem;
+    top: -50px;
     color: #61a8f8;
 }
