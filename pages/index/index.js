@@ -3,8 +3,6 @@
 const app = getApp()
 var timestamp = Date.parse(new Date());
 var date = new Date(timestamp);
-//年  
-var Y = date.getFullYear();  
 //月  
 var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);  
 //日  
@@ -24,7 +22,6 @@ Page({
     name:wx.getStorageSync('name'),
     school:wx.getStorageSync('school'),
     location:wx.getStorageSync('location'),
-    year:Y,
     month:M,
     date:D,
     hour:H,

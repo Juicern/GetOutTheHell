@@ -14,16 +14,16 @@
         <van-icon color="#49f" customStyle="position: relative;top: 8rpx;margin-right: 12rpx;" name="warning"></van-icon>{{errorText}}
 	</view> -->
     <view class="context">
+        <view class="time">{{month}}月{{date}}日 {{hour}}:{{min}}</view>
         <view class="icon">
             <!-- <van-icon name="checked"></van-icon> -->
-            <image src="/icon/11.png" mode="aspectFit" style="width:35%"></image>
+            <image src="/icon/IMG_0757.jpg" mode="widthFix" style="width:52%"></image>
         </view>
         <!-- <view class="error icon" wx:else>
             <van-icon name="warning"></van-icon>
         </view> -->
         <view class="text">祝你平安</view>
         <view class="gate-name">{{location}}</view>
-        <view class="time">{{year}}年{{month}}月{{date}}日 {{hour}}:{{min}}</view>
     </view>
     <!-- <audio id="player" src="{{'https://fanyi.baidu.com/gettts?lan=zh&text='+(data.state?'祝你平安':'没有报备')+'&spd=5&source=web'}}"></audio> -->
 </view>
